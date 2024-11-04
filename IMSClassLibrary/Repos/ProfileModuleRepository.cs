@@ -8,13 +8,15 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Reflection;
+using IMSClassLibrary.Context;
+using IMSClassLibrary.Interfaces;
 
 namespace IMSClassLibrary.Repos
 {
     public class ProfileModuleRepository : IInterface<ProfileModule>
     {
-        DatabaseContext _context;
-        public ProfileModuleRepository(DatabaseContext context)
+        SystemDbContext _context;
+        public ProfileModuleRepository(SystemDbContext context)
         {
             this._context = context;
         }

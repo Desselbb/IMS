@@ -5,23 +5,33 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IMSClassLibrary.Models;
 
 namespace IMSClassLibrary.Models
 {
-    public class InternProject
+    public class Comment
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Key]
+
+        public int UserId { get; set; }
         [Required]
-        [ForeignKey(nameof(Project))]
         public int ProjectId { get; set; }
+     
+        public string Comments  { get; set; }
+
         [Required]
-        [ForeignKey(nameof(Profile))]
-        public int ProfileId { get; set; }
-        public Profile Profile { get; set; }
+        [StringLength(50)]
+        public string? CreatedBy { get; set; }
+
+        [DataType(DataType.DateTime)]
+        public DateTime CreatedDate { get; set; } = DateTime.Now;
+
+        public User User { get; set; }
         public Project Project { get; set; }
+        
+
 
     }
 }

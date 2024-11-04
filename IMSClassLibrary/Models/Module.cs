@@ -13,7 +13,7 @@ namespace IMSClassLibrary.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-
+             
         public int ParentId { get; set; }
 
         [Required]

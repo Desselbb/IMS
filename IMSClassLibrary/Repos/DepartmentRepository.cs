@@ -24,7 +24,7 @@ namespace IMSClassLibrary.Repos
 		{
 			try
 			{
-				if (_context.Departments.Where(d=>d.Name.Trim() == Department.Name.Trim() && d.UnitId == Department.UnitId).FirstOrDefault() == null)
+				if (_context.Departments.Where(d=>d.Name.Trim() == Department.Name.Trim()).FirstOrDefault() == null)
 				{
 					_context.Departments.Add(Department);
 					_context.SaveChanges();
@@ -49,7 +49,7 @@ namespace IMSClassLibrary.Repos
 				bool addAll = true;
 				foreach (var dept in Departments)
 				{
-					if (Get(dept.UnitId,dept.Name.Trim()).Data.Id>0)
+					if (Get(dept.Id,dept.Name.Trim()).Data.Id>0)
 					{
 						addAll = false;
 						break;
@@ -106,7 +106,7 @@ namespace IMSClassLibrary.Repos
 		{
 			try
 			{
-				return ResultObject<Department>.Success("Department Retrived", _context.Departments.Include(a=>a.Unit).Single(b => b.Id == Id));
+				return ResultObject<Department>.Success("Department Retrived", _context.Departments.Single(b => b.Id == Id));
 			}
 			catch (Exception d)
 			{
@@ -118,7 +118,7 @@ namespace IMSClassLibrary.Repos
 		{
 			try
 			{
-				return ResultObject<Department>.Success("", _context.Departments.Include(s=>s.Unit).Single(b => b.UnitId == unitId && b.Name.Trim()==DepartmentName.Trim()));
+				return ResultObject<Department>.Success("", _context.Departments.Single(b => b.Id == unitId && b.Name.Trim()==DepartmentName.Trim()));
 			}
 			catch (Exception d)
 			{
@@ -130,7 +130,7 @@ namespace IMSClassLibrary.Repos
 		{
 			try
 			{
-				return ResultObject<List<Department>>.Success("", _context.Departments.Include(s => s.Unit).ToList());
+				return ResultObject<List<Department>>.Success("", _context.Departments.ToList());
 			}
 			catch
 			{
