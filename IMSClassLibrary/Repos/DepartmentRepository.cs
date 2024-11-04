@@ -1,15 +1,4 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
-using IMSClassLibrary.Models;
-using IMSClassLibrary.Interfaces;
-using IMSClassLibrary.Context;
-
-
 namespace IMSClassLibrary.Repos
 {
     public class DepartmentRepository : IInterface<Department>

@@ -1,15 +1,4 @@
-﻿using IMSClassLibrary.Models;
-using IMSClassLibrary.Repos;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query;
-using System.Reflection;
-using IMSClassLibrary.Context;
-using IMSClassLibrary.Interfaces;
+﻿
 
 namespace IMSClassLibrary.Repos
 {

@@ -1,18 +1,4 @@
-﻿using IMSClassLibrary.Interfaces;
-using IMSClassLibrary.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using Microsoft.EntityFrameworkCore;
-using System.Net.Mail;
-using System.Net;
-using IMSClassLibrary.Context;
-using IMSClassLibrary.Repos;
-using IMSClassLibrary.repos;
-
+﻿
 
 namespace IMSClassLibrary.Repos
 {

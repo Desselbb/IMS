@@ -1,15 +1,7 @@
-using IMSClassLibrary.Interfaces;
-using IMSClassLibrary.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using IMSClassLibrary.Context;
-using IMSClassLibrary.Repos;
 
-namespace STAFFTRAVEL.SHARED.Repositories
+
+
+namespace IMSClassLibrary.Repos
 {
     public class ModuleRepository : IInterface<Module>
     {
